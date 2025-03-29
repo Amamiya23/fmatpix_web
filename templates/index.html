@@ -223,7 +223,7 @@
                                     <option value="api" selected>API模式</option>
                                     <option value="local">本地模式</option>
                                 </select>
-                                <div class="form-text">API模式使用在线服务，本地模式使用ONNX模型</div>
+                                <div class="form-text">API模式使用在线服务，本地模式使用本地模型</div>
                             </div>
                         </div>
                     </div>
@@ -705,7 +705,7 @@
                 const mode = this.value;
                 if (mode === 'local') {
                     // 尝试初始化本地模型
-                    updateStatus('正在初始化本地ONNX模型...');
+                    updateStatus('正在初始化本地本地模型...');
                     
                     fetch('/init_model', {
                         method: 'POST'
@@ -713,7 +713,7 @@
                     .then(response => response.json())
                     .then(data => {
                         if (data.status) {
-                            updateStatus('已切换到本地ONNX模型模式');
+                            updateStatus('已切换到本地本地模型模式');
                         } else {
                             updateStatus(`切换到本地模式失败: ${data.msg}`, true);
                             // 如果初始化失败，回退到API模式
