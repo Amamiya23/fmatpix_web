@@ -1,6 +1,6 @@
 # FMatPix Web - 数学公式识别Web应用
 
-![应用截图](assets.README/image-20250329125916376.png)
+![image-20250329132811628](assets/README/image-20250329132811628.png)
 
 ## 项目概述
 
@@ -22,7 +22,6 @@ FMatPix Web是基于Flask的数学公式识别Web应用，提供两种识别模�
 
 ### 系统要求
 - Python 3.8+
-- pip
 
 ### 安装步骤
 1. 克隆仓库：
@@ -60,8 +59,6 @@ client = OpenAI(
 2. 在项目目录创建models文件夹，将下载的模型文件放入models文件夹
 4. 通过torch检测cuda，若未配置则使用cpu进行推理（速度较慢）：
 
-
-
 ## 使用说明
 
 1. 启动应用：
@@ -78,6 +75,10 @@ python app.py
 - 编辑LaTeX代码
 - 复制结果到剪贴板
 
+程序运行后会创建托盘角标，方便用户进行二次跳转界面或者退出程序。
+
+![image-20250329132951779](assets/README/image-20250329132951779.png)
+
 ## 项目结构
 
 ```
@@ -93,6 +94,10 @@ fmatpix_web/
 └── assets.README/        # README资源
 ```
 
-## 许可证
+## 项目不足
 
-MIT License
+由于涉及深度学习环境，打包后体积会非常巨大，我对python打包了解不深，希望大家可以提供更好的打包建议。
+
+## 致谢
+
+本项目部分功能基于开源项目[FMatPix](https://github.com/ai25395/FMatPix)实现，特此感谢。
