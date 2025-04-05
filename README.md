@@ -2,13 +2,13 @@
 
 ![image-20250329132811628](assets/README/image-20250329132811628.png)
 
-## 项目概述
+## 一、项目概述
 
 FMatPix Web是基于Flask的数学公式识别Web应用，提供两种识别模式：
 1. **API模式**：使用火山引擎Doubao-vision-lite-32k大模型
 2. **本地模式**：使用FMatPix项目提供的公式定位模型和公式识别模型，此方式需要配置对应深度学习环境，涉及pytorch-cuda等拓展库体积很大，打包后会体积也非常臃肿，因此只建议涉猎深度学习的用户使用，这样无需二次配置环境节省大量空间。
 
-## 功能特点
+## 二、功能特点
 
 - 支持图片上传和剪贴板粘贴识别
 - 实时LaTeX渲染预览及修改
@@ -18,12 +18,12 @@ FMatPix Web是基于Flask的数学公式识别Web应用，提供两种识别模�
 - 置信度显示❌（这是我从之前我的项目迁移的，目前的置信度是定值，无参考意义）
 - 多种复制格式选项
 
-## 安装指南
+## 三、安装指南
 
-### 系统要求
+### 1.系统要求
 - Python 3.8+
 
-### 安装步骤
+### 2.安装步骤
 1. 克隆仓库：
 ```bash
 git clone https://github.com/yourusername/fmatpix_web.git
@@ -35,9 +35,9 @@ cd fmatpix_web
 pip install -r requirements.txt
 ```
 
-## 配置指南
+## 三、配置指南
 
-### API模式配置
+### 1.API模式配置
 1. 访问[火山方舟管理控制台](https://console.volcengine.com/ark/region:ark+cn-beijing/experience/chat)
 2. 开通Doubao-vision-lite-32k或其他视觉模型
 3. 获取API Key
@@ -53,13 +53,13 @@ client = OpenAI(
 >
 > 此方式借助openai的sdk，因此对于市面上现存的视觉模型api理论都是可以支持替代的。这些视觉大模型的价格相较于目前转向收费的SimpleTex要便宜划算许多，并且不用不扣费。
 
-### 本地模式配置
+### 2.本地模式配置
 
 1. 从[FMatPix项目](https://github.com/ai25395/FMatPix)下载模型
 2. 在项目目录创建models文件夹，将下载的模型文件放入models文件夹
 4. 通过torch检测cuda，若未配置则使用cpu进行推理（速度较慢）：
 
-## 使用说明
+## 四、使用说明
 
 1. 启动应用：
 ```bash
@@ -79,7 +79,7 @@ python app.py
 
 ![image-20250329132951779](assets/README/image-20250329132951779.png)
 
-## 项目结构
+## 五、项目结构
 
 ```
 fmatpix_web/
@@ -94,7 +94,7 @@ fmatpix_web/
 └── assets.README/        # README资源
 ```
 
-## 项目不足
+## 六、项目不足
 
 由于涉及深度学习环境，打包后体积会非常巨大，我对python打包了解不深，希望大家可以提供更好的打包建议。
 
